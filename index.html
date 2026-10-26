@@ -1,10 +1,185 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <meta http-equiv="refresh" content="0; url=https://github.com/giovanniramos/" />
-    </head>
-    <body>
-        <p>This content has moved to <a href="https://github.com/giovanniramos/">https://github.com/giovanniramos/</a>. Attempting to automatically redirect you.</p>
-    </body>
-</html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giovanni Ramos | Senior Software Engineer (.NET & Full-Stack)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { background-color: #0d1117; color: #c9d1d9; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .neon-border { border: 1px solid rgba(138, 43, 226, 0.3); transition: all 0.3s ease; }
+        .neon-border:hover { border-color: #8A2BE2; box-shadow: 0 0 20px rgba(138, 43, 226, 0.25); transform: translateY(-4px); }
+        .gradient-text { background: linear-gradient(90deg, #a855f7, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-card { background-color: #161b22; }
+    </style>
+</head>
+<body class="antialiased selection:bg-purple-600 selection:text-white">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-[#0d1117]/80 border-b border-gray-800">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="text-xl font-bold text-white tracking-wider">&lt;Giovanni<span class="text-purple-500">Ramos</span> /&gt;</span>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-purple-400 transition">About</a>
+                <a href="#skills" class="hover:text-purple-400 transition">Architecture & Tech</a>
+                <a href="#projects" class="hover:text-purple-400 transition">Projects</a>
+            </nav>
+            <div class="flex space-x-4">
+                <a href="https://github.com/giovanniramos" target="_blank" class="text-gray-400 hover:text-white text-xl transition"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/giovanniramos" target="_blank" class="text-gray-400 hover:text-blue-400 text-xl transition"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="about" class="max-w-6xl mx-auto px-6 py-20 md:py-28 flex flex-col-reverse md:flex-row items-center gap-12">
+        <div class="flex-1 text-center md:text-left">
+            <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-purple-300 uppercase bg-purple-900/30 border border-purple-700/50 rounded-full">
+                15+ Years of Experience
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+                Senior Software <span class="gradient-text">Engineer</span>
+            </h1>
+            <h2 class="text-xl md:text-2xl text-gray-400 font-medium mb-6">
+                .NET Ecosystem & Full-Stack Specialist
+            </h2>
+            <p class="text-gray-400 leading-relaxed mb-8 max-w-2xl">
+                Specializing in designing and building scalable, robust web solutions, mobile-first applications, and distributed architectures. High-throughput RESTful APIs, microservices, and database-intensive backends across relational and NoSQL environments.
+            </p>
+            <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                <a href="#projects" class="px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white font-semibold rounded-lg shadow-lg shadow-purple-600/30 transition flex items-center gap-2">
+                    <i class="fas fa-code-branch"></i> View My Projects
+                </a>
+                <a href="https://linkedin.com/in/giovanniramos" target="_blank" class="px-6 py-3 bg-card hover:bg-gray-800 text-white font-semibold rounded-lg border border-gray-700 transition flex items-center gap-2">
+                    <i class="fab fa-linkedin text-blue-400"></i> Connect on LinkedIn
+                </a>
+            </div>
+        </div>
+
+        <!-- Dynamic GitHub Avatar -->
+        <div class="w-48 h-48 md:w-64 md:h-64 relative flex-shrink-0">
+            <img id="gh-avatar" src="https://github.com/giovanniramos.png" alt="Giovanni Ramos" class="w-full h-full rounded-full object-cover shadow-2xl">
+        </div>
+    </section>
+
+    <!-- Core Competencies -->
+    <section id="skills" class="bg-[#090d11] py-20 border-y border-gray-800/80">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-white mb-2 text-center">Core Competencies & Architecture</h2>
+            <p class="text-gray-400 text-center mb-12">Technologies and practices I use to turn business problems into scalable software</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-card p-6 rounded-xl neon-border">
+                    <div class="w-12 h-12 bg-purple-900/40 text-purple-400 rounded-lg flex items-center justify-center text-2xl mb-4">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Backend & .NET</h3>
+                    <p class="text-sm text-gray-400 mb-4">High-performance RESTful APIs, Microservices, and enterprise architecture.</p>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-2.5 py-1 bg-gray-800 text-purple-300 rounded">C# / .NET</span>
+                        <span class="px-2.5 py-1 bg-gray-800 text-gray-300 rounded">Microservices</span>
+                        <span class="px-2.5 py-1 bg-gray-800 text-gray-300 rounded">PHP</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-card p-6 rounded-xl neon-border">
+                    <div class="w-12 h-12 bg-red-900/30 text-red-400 rounded-lg flex items-center justify-center text-2xl mb-4">
+                        <i class="fas fa-mobile-screen-button"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Frontend & Mobile Web</h3>
+                    <p class="text-sm text-gray-400 mb-4">Responsive, mobile-first single-page applications and modern UIs.</p>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-2.5 py-1 bg-gray-800 text-red-300 rounded">Angular</span>
+                        <span class="px-2.5 py-1 bg-gray-800 text-blue-300 rounded">TypeScript</span>
+                        <span class="px-2.5 py-1 bg-gray-800 text-gray-300 rounded">JavaScript</span>
+                        <span class="px-2.5 py-1 bg-gray-800 text-gray-300 rounded">HTML5/CSS3</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-card p-6 rounded-xl neon-border">
+                    <div class="w-12 h-12 bg-blue-900/30 text-blue-400 rounded-lg flex items-center justify-center text-2xl mb-4">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Data Management</h3>
+                    <p class="text-sm text-gray-400 mb-4">Modeling, query optimization, and scaling across SQL and NoSQL engines.</p>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-2.5 py-1 bg-gray-800 text-blue-300 rounded">SQL Server</span>
+                        <span class="px-2.5 py-1 bg-gray-800 text-gray-300 rounded">PostgreSQL</span>
+                        <span class="px-2.5 py-1 bg-gray-800 text-green-300 rounded">MongoDB</span>
+                        <span class="px-2.5 py-1 bg-gray-800 text-gray-300 rounded">MySQL / MariaDB</span>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-card p-6 rounded-xl neon-border">
+                    <div class="w-12 h-12 bg-cyan-900/30 text-cyan-400 rounded-lg flex items-center justify-center text-2xl mb-4">
+                        <i class="fab fa-docker"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">DevOps & Tooling</h3>
+                    <p class="text-sm text-gray-400 mb-4">Containerized environments, version control, and automated workflows.</p>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-2.5 py-1 bg-gray-800 text-cyan-300 rounded">Docker</span>
+                        <span class="px-2.5 py-1 bg-gray-800 text-gray-300 rounded">CI/CD</span>
+                        <span class="px-2.5 py-1 bg-gray-800 text-gray-300 rounded">Git / GitHub</span>
+                        <span class="px-2.5 py-1 bg-gray-800 text-orange-300 rounded">GitLab</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic GitHub Projects Section -->
+    <section id="projects" class="max-w-6xl mx-auto px-6 py-20">
+        <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+            <div>
+                <h2 class="text-3xl font-bold text-white mb-2">Open Source & Featured Repositories</h2>
+                <p class="text-gray-400">Directly synced with my GitHub profile</p>
+            </div>
+            <a href="https://github.com/giovanniramos?tab=repositories" target="_blank" class="mt-4 md:mt-0 text-purple-400 hover:text-purple-300 font-medium flex items-center gap-2">
+                View all on GitHub <i class="fas fa-arrow-right text-sm"></i>
+            </a>
+        </div>
+
+        <!-- Grid populated via JavaScript -->
+        <div id="repos-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="col-span-full text-center py-12 text-gray-500">
+                <i class="fas fa-circle-notch fa-spin text-2xl text-purple-500 mb-2"></i>
+                <p>Loading projects from GitHub...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 py-8 text-center text-sm text-gray-500">
+        <p>© <span id="year"></span> Giovanni Ramos. Built with HTML, TailwindCSS & GitHub API.</p>
+    </footer>
+
+    <!-- Script to fetch GitHub Repositories automatically -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        async function loadProjects() {
+            const container = document.getElementById('repos-container');
+            try {
+                const res = await fetch('https://api.github.com/users/giovanniramos/repos?sort=updated&per_page=12');
+                const repos = await res.json();
+
+                // Filtra forks e o repositório de perfil, pegando os 6 melhores/mais recentes
+                const filtered = repos
+                    .filter(r => !r.fork && r.name.toLowerCase() !== 'giovanniramos' && r.name.toLowerCase() !== 'giovanniramos.github.io')
+                    .sort((a, b) => b.stargazers_count - a.stargazers_count)
+                    .slice(0, 6);
+
+                if (filtered.length === 0) {
+                    container.innerHTML = `<p class="col-span-full text-center text-gray-400">More public projects coming soon!</p>`;
+                    return;
+                }
+
+                container.innerHTML = filtered.map(repo => `
+                    <a href="${repo.html_url}" target="_blank" class="bg-card p-6 rounded-xl neon-border flex flex-col justify-between block">
+                        <div>
+                            <div cla
