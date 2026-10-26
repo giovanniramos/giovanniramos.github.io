@@ -158,21 +158,25 @@
         <p>© <span id="year"></span> Giovanni Ramos. Built with HTML, TailwindCSS & GitHub API.</p>
     </footer>
 
-    <!-- Script to fetch GitHub Repositories automatically -->
+    <!-- Script to fetch GitHub Repositories -->
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
 
         async function loadProjects() {
             const container = document.getElementById('repos-container');
             try {
-                const res = await fetch('https://api.github.com/users/giovanniramos/repos?sort=updated&per_page=12');
+                const res = await fetch('https://api.github.com/users/giovanniramos/repos');
                 const repos = await res.json();
 
-                // Filtra forks e o repositório de perfil, pegando os 6 melhores/mais recentes
+                const ignoredRepos = ['giovanniramos', 'giovanniramos.github.io'];
+
                 const filtered = repos
-                    .filter(r => !r.fork && r.name.toLowerCase() !== 'giovanniramos' && r.name.toLowerCase() !== 'giovanniramos.github.io')
+                    .filter(r => !r.fork && !ignoredRepos.includes(r.name.toLowerCase()))
+                    .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at))
+                    .slice(0, 6)
+                    .filter(r => r.stargazers_count >= 1)
                     .sort((a, b) => b.stargazers_count - a.stargazers_count)
-                    .slice(0, 6);
+                    .slice(0, 3);
 
                 if (filtered.length === 0) {
                     container.innerHTML = `<p class="col-span-full text-center text-gray-400">More public projects coming soon!</p>`;
@@ -182,4 +186,34 @@
                 container.innerHTML = filtered.map(repo => `
                     <a href="${repo.html_url}" target="_blank" class="bg-card p-6 rounded-xl neon-border flex flex-col justify-between block">
                         <div>
-                            <div cla
+                            <div class="flex justify-between items-start mb-3">
+                                <i class="far fa-folder-open text-2xl text-purple-400"></i>
+                                <div class="flex items-center space-x-3 text-xs text-gray-400">
+                                    <span><i class="fas fa-star ${repo.stargazers_count > 0 ? 'text-yellow-500' : 'text-gray-600'}"></i> ${repo.stargazers_count}</span>
+                                    ${repo.forks_count > 0 ? `<span><i class="fas fa-code-branch"></i> ${repo.forks_count}</span>` : ''}
+                                    <i class="fas fa-external-link-alt hover:text-white"></i>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2 truncate">${repo.name}</h3>
+                            <p class="text-sm text-gray-400 line-clamp-3 mb-4">
+                                ${repo.description || 'Undefined description.'}
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-gray-800/80">
+                            <span class="flex items-center gap-1.5 font-medium text-purple-300">
+                                <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span>
+                                ${repo.language || 'Others'}
+                            </span>
+                            <span>Updated ${new Date(repo.pushed_at).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</span>
+                        </div>
+                    </a>
+                `).join('');
+            } catch (err) {
+                container.innerHTML = `<p class="col-span-full text-center text-gray-400">Check out my repositories at <a href="https://github.com/giovanniramos" class="text-purple-400 underline">github.com/giovanniramos</a></p>`;
+            }
+        }
+
+        loadProjects();
+    </script>
+</body>
+</html>
